@@ -1,0 +1,372 @@
+:root {
+    --bg-paper: #F4F4F0;
+    --border-black: 1px solid #111111;
+    --shadow-hard: 3px 3px 0px #111111;
+    --font-mono: 'Courier New', Courier, monospace;
+    --accent-lime: #CCFF00; /* Acid Green */
+    --accent-pink: #FF007F; /* Hot Cyber Pink */
+    --text-main: #111111;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--bg-paper);
+    color: var(--text-main);
+    font-family: var(--font-mono);
+  }
+  
+  .a4-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 12px;
+    gap: 10px;
+  }
+  
+  .app-header {
+    border: var(--border-black);
+    padding: 8px;
+    background-color: #FFFFFF;
+    box-shadow: var(--shadow-hard);
+    flex-shrink: 0;
+  }
+  .app-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 0;
+    flex-shrink: 0;
+    border-bottom: 2px solid #111111;
+    margin-bottom: 8px;
+  }
+  
+  .app-logo {
+    max-height: 38px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 2px;
+    image-rendering: pixelated;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+  .brand-title {
+    font-family: 'VT323', monospace;
+    font-size: 38px;
+    line-height: 1;
+    color: hsl(0, 0%, 0%);
+    letter-spacing: 4px;
+    font-style: italic;
+    transform: skewX(-12deg);
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+  /* Add VT323 font family variable or use directly */
+.brand-subtitle {
+    font-family: 'VT323', monospace;
+    font-size: 16px; /* Pixel fonts render best slightly larger */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #333333;
+  }
+  
+  .inventory-header, 
+  .inventory-empty-notice, 
+  .drop-label, 
+  .paste-notice {
+    font-family: 'VT323', monospace;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  .canvas-wrapper {
+    flex: 1;
+    border: var(--border-black);
+    position: relative;
+    box-shadow: var(--shadow-hard);
+    padding: 8px;
+    min-height: 0;
+  
+    /* Real Crumpled Paper Background */
+    background-image: url('assets/paper-texture.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .drop-zone {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #111111;
+  }
+  
+  .drop-label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: var(--accent-lime);
+    color: var(--text-main);
+    padding: 4px 8px;
+    border: var(--border-black);
+    box-shadow: 2px 2px 0px #111111;
+  }
+  /* Drop Zone Label & Paste Notice */
+.drop-label-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    pointer-events: none;
+    z-index: 2;
+    width: 90%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+  
+  .drop-label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    background-color: var(--accent-lime);
+    color: var(--text-main);
+    padding: 4px 8px;
+    border: var(--border-black);
+    box-shadow: 2px 2px 0px #111111;
+    display: inline-block;
+    white-space: normal;
+    word-break: break-word;
+  }
+  
+  .paste-notice {
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    background-color: #FF007F; /* Hot Cyber Pink */
+    color: #FFFFFF;            /* High-contrast white text */
+    padding: 4px 6px;
+    border: var(--border-black);
+    box-shadow: 2px 2px 0px #111111;
+    text-transform: uppercase;
+    display: inline-block;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.3;
+  }
+  .app-footer {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  
+  .app-footer .btn-brutalist {
+    flex: 1;
+  }
+  
+  .app-footer .btn-secondary {
+    flex: 0.4;
+  }
+  /* Base button container */
+  .upload-btn-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #FF007A; /* Magenta/Pink from screenshot */
+    color: #FFFFFF;
+    cursor: pointer;
+    overflow: hidden;
+    flex: 1;
+  }
+  
+  /* Invisible overlay file input */
+  .upload-btn-wrapper input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 0; /* Prevents default browser tooltip */
+  }
+  
+  /* Brutalist shared styles */
+  .btn-brutalist {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 11px;
+    padding: 10px 12px;
+    border: 2px solid #111111;
+    box-shadow: 2px 2px 0px #111111;
+    text-transform: uppercase;
+    user-select: none;
+  }
+  
+  .btn-brutalist.btn-secondary {
+    background: #CCFF00; /* Lime green from screenshot */
+    color: #111111;
+  }
+  
+  .upload-btn-wrapper:active,
+  .btn-brutalist.btn-secondary:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0px #111111;
+  }
+  .btn-brutalist {
+    flex: 1;
+    padding: 10px 4px;
+    background-color: var(--accent-pink);
+    color: #FFFFFF;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: bold;
+    border: var(--border-black);
+    box-shadow: var(--shadow-hard);
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  .btn-brutalist:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px #111111;
+  }
+  
+  .btn-secondary {
+    background-color: var(--accent-lime);
+    color: var(--text-main);
+    flex: 0.35;
+  }
+  .garment-card {
+    position: absolute;
+    width: 120px;
+    user-select: none;
+    touch-action: none;
+  }
+  
+  .garment-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none;
+  }
+  
+  .resize-handle {
+    width: 14px;
+    height: 14px;
+    background-color: #CCFF00;
+    border: 1px solid #111111;
+    position: absolute;
+    right: -6px;
+    bottom: -6px;
+    cursor: nwse-resize;
+    z-index: 999;
+    pointer-events: auto;
+    touch-action: none;
+  }
+ 
+  .card-remove {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--accent-pink);
+    color: #FFFFFF;
+    border: var(--border-black);
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .drop-zone.highlight {
+    background-color: #F0F0EE;
+    border-color: var(--accent-pink);
+  }
+  /* Inventory Rack Styles */
+.inventory-section {
+    border: var(--border-black);
+    background-color: #FFFFFF;
+    box-shadow: var(--shadow-hard);
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  
+  .inventory-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: var(--border-black);
+    padding-bottom: 4px;
+  }
+  
+  .inventory-tray {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    min-height: 60px;
+    max-height: 70px;
+    align-items: center;
+    padding: 2px 0;
+  }
+  
+  /* Horizontal Scrollbar Styling */
+  .inventory-tray::-webkit-scrollbar {
+    height: 4px;
+  }
+  .inventory-tray::-webkit-scrollbar-thumb {
+    background: var(--text-main);
+  }
+  
+  .inventory-empty-notice {
+    font-size: 9px;
+    color: #888888;
+    margin: auto;
+    letter-spacing: 1px;
+  }
+  
+  /* Thumbnail Item inside Inventory */
+  .inventory-item {
+    width: 48px;
+    height: 48px;
+    border: var(--border-black);
+    background-color: var(--bg-paper);
+    box-shadow: 2px 2px 0px #111111;
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .inventory-item:hover {
+    background-color: var(--accent-lime);
+  }
+  
+  .inventory-item img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    pointer-events: none;
+  }
+  

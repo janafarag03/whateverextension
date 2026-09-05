@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "whatever...",
+    "version": "1.0.0",
+    "description": "Digital fitting room overlay & A4 grid outfit board.",
+    "icons": {
+      "16": "assets/16.png",
+      "48": "assets/48.png",
+      "128": "assets/128.png"
+    },
+    "permissions": [
+      "sidePanel"
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "side_panel": {
+      "default_path": "sidepanel.html"
+    },
+    "action": {
+      "default_title": "Open Fitting Room"
+    }
+}

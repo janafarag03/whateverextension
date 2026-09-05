@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>whatever...</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Meddon&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <div class="a4-container">
+    <header class="app-header">
+        <div class="brand-title">whatever...</div>
+        <div class="brand-subtitle">[ digital fitting room ]</div>
+      </header>
+    <main class="canvas-wrapper">
+      <div id="drop-zone" class="drop-zone">
+        <div class="drop-label-wrapper">
+          <span class="drop-label">DRAG GARMENTS HERE</span>
+          <span class="paste-notice">OR PASTE BASE PHOTO<br></span>
+        </div>
+      </div>
+    </main>
+
+    <!-- INVENTORY SECTION -->
+    <section class="inventory-section">
+      <div class="inventory-header">
+        <span>[ GARMENT RACK ]</span>
+        <span id="inventory-count">0 ITEMS</span>
+      </div>
+      <div id="inventory-tray" class="inventory-tray">
+        <div class="inventory-empty-notice">RACK EMPTY</div>
+      </div>
+    </section>
+    
+    <div class="app-footer">
+      <button id="btn-save-canvas" type="button" class="btn-brutalist">SAVE</button>
+      <button id="btn-clear-board" type="button" class="btn-brutalist btn-secondary">CLEAR</button>
+    </div>
+  </div>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
