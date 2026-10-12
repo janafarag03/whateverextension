@@ -1,3 +1,4 @@
+<!-- sidepanel.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +12,20 @@
 <body>
   <div class="a4-container">
     <header class="app-header">
-        <div class="brand-title">whatever...</div>
-        <div class="brand-subtitle">[ digital fitting room ]</div>
-      </header>
+      <div class="brand-title">whatever...</div>
+      <div class="brand-subtitle">[ digital fitting room ]</div>
+    </header>
+
+    <!-- BACKGROUND SELECTOR TOOLBAR -->
+    <div class="journal-bg-toolbar">
+      <button id="cycle-bg-btn" type="button" class="journal-btn">
+        <span class="btn-icon"></span> CHANGE BACKGROUND
+      </button>
+      <span id="bg-name-display" class="bg-label">CRUMPLED GRID</span>
+    </div>
+
     <main class="canvas-wrapper">
-      <div id="drop-zone" class="drop-zone">
+      <div id="drop-zone" class="drop-zone journal-workspace">
         <div class="drop-label-wrapper">
           <span class="drop-label">DRAG GARMENTS HERE</span>
           <span class="paste-notice">OR PASTE BASE PHOTO<br></span>
@@ -39,6 +49,9 @@
       <button id="btn-clear-board" type="button" class="btn-brutalist btn-secondary">CLEAR</button>
     </div>
   </div>
+
+  <!-- Load scripts ONCE at the end of body -->
+  <script src="https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.5.5/dist/index.js"></script>
   <script src="sidepanel.js"></script>
 </body>
 </html>
