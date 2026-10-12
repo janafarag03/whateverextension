@@ -5,7 +5,6 @@ A Chrome extension for building digital outfit collages right inside your browse
 ## What it does
 
 - Drag clothing images from online shopping sites straight onto your workspace.
-- Automatically clears out background whites without chewing into light-colored clothes.
 - Keeps track of your dropped items in an inventory rack at the bottom.
 - Resize, rotate, and layer garments freely.
 - Switch between different paper and journal background textures.
